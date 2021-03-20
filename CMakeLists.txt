@@ -11,10 +11,15 @@ set(Automata_SOURCE_FILES
         src/json.hpp
         src/State.h
         src/State.cpp
-        src/Transition.cpp src/Transition.h)
+        src/Transition.cpp
+        src/Transition.h
+        src/NFA.cpp
+        src/NFA.h
+        src/Utils.cpp
+        src/Utils.h)
 
 # Set source files for RELEASE target
-set(RELEASE_SOURCE_FILES main.cpp src/NFA.cpp src/NFA.h src/Utils.cpp src/Utils.h)
+set(RELEASE_SOURCE_FILES main.cpp)
 
 # Create RELEASE target
 add_executable(Automata ${RELEASE_SOURCE_FILES} ${Automata_SOURCE_FILES})
