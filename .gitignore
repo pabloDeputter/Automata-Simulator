@@ -31,5 +31,5 @@
 *.out
 *.app
 
-# Build folder
-./cmake-build-default
+# Build folder and releases
+cmake-build-default
