@@ -1,0 +1,13 @@
+digraph DFA {
+	rankdir=LR
+	size="8,5"
+	node [shape = doublecircle color = black]; "{1}" 
+	node [shape = circle color = green]; "{0,3}"
+	node [shape = circle color = black];
+	"{0,3}" -> "{0,3}" [ label = "n" ]
+	"{0,3}" -> "{1}" [ label = "h" ]
+	"{1}" -> "{2,4}" [ label = "n" ]
+	"{1}" -> "{2,4}" [ label = "h" ]
+	"{2,4}" -> "{1}" [ label = "n" ]
+	"{2,4}" -> "{2,4}" [ label = "h" ]
+}
