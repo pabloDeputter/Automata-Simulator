@@ -54,12 +54,15 @@ const State *const State::get_transitions_to(const State* state, const std::stri
 
 std::string State::contains_set(const std::map<const std::string, State *> &states, const std::string &symbol) const {
 
+    // Iterate trough states
     for (const std::pair<const std::string, State*> & i : states) {
 
+        // Parse set with spaces
         std::vector<std::string> parsed_set = Utils::parse_set_space(i.first);
 
         for (const State* j : this->get_transitions_symbol(symbol)) {
 
+            // Check if exists in given states / parsed set
             if (std::find(parsed_set.begin(), parsed_set.end(), j->get_name()) != parsed_set.end()) {
                 return i.first;
             }

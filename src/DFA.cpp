@@ -176,6 +176,7 @@ void DFA::print() const {
     // Convert string to .json object (nlohmann) - Accessing van values lukt nog altijd
 //    std::stringstream(output_string) >> j;
 
+    // .json werkte voor een of andere reden niet
     std::cout << std::setw(4) << output_string << std::endl;
 
 //    std::cout << std::setw(4) << j;
@@ -233,7 +234,7 @@ DFA DFA::minimize() {
     }
     new_states.erase(unique(new_states.begin(), new_states.end()), new_states.end());
 
-
+    // Make new states
     for (const std::vector<std::string> & i : new_states) {
 
         std::tuple<std::string, bool, bool> tuple_state = Utils::make_new_state(i, this);

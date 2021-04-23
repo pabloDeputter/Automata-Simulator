@@ -8,6 +8,7 @@ std::map<const std::string, Pair*> Pair::make_pairs(const DFA *dfa) {
 
     std::map<const std::string, Pair*> pairs;
 
+    // For every state in DFA traverse all states
     for (const std::pair<std::string, State*> i : dfa->get_states()) {
 
         for (const std::pair<std::string, State*> j : dfa->get_states()) {
@@ -15,10 +16,12 @@ std::map<const std::string, Pair*> Pair::make_pairs(const DFA *dfa) {
 
             std::string double_pair = "{" + j.first + "," + i.first + "}";
 
+            // Skip if already exists in pairs
             if (pairs.find(j.first) != pairs.end() || pairs.find(double_pair) != pairs.end()) {
                 continue;
             }
 
+            // Skip if equal
             if (i.first == j.first) {
                 continue;
             }
@@ -26,7 +29,6 @@ std::map<const std::string, Pair*> Pair::make_pairs(const DFA *dfa) {
             Pair *x = new Pair(i.second, j.second);
 
             pairs.emplace(x->pair_name, x);
-
         }
     }
     return pairs;
@@ -53,11 +55,13 @@ std::vector<std::string> Utils::parse_set(const std::string &x) {
     // Holds the names of each state in the set
     std::string a;
 
+    // If set isn't actually a set return given string
     if (x[0] != '{' || x[x.size() - 1] != '}') {
         parsed_set.emplace_back(x);
         return parsed_set;
     }
 
+    // Traverse all chars but first and last
     for (int i = 1; i != x.size() - 1; i++) {
         // Comma means start of new state name, so insert into parsed_set and clear a
         if (x[i] == ',' || x[i] == '{' || x[i] == '}') {
@@ -75,6 +79,7 @@ std::vector<std::string> Utils::parse_set(const std::string &x) {
         a += x[i];
     }
 
+    // Sort and erase any duplicates
     std::sort(parsed_set.begin(), parsed_set.end());
     parsed_set.erase( unique(parsed_set.begin(), parsed_set.end() ), parsed_set.end());
 
@@ -88,15 +93,18 @@ std::vector<std::string> Utils::parse_set_space(const std::string &x) {
     // Holds the names of each state in the set
     std::string a;
 
+    // If set isn't actually a set return given string
     if (x[0] != '{' && x[x.size() - 1] != '}') {
         parsed_set.emplace_back(x);
         return parsed_set;
     }
 
+    // Substring but first and last char
     std::string sub_x = x.substr(1, x.size() - 2);
 
     std::stringstream ss (sub_x);
 
+    // Remove commas from substr
     while( ss.good() )
     {
         std::string substr;
@@ -105,6 +113,7 @@ std::vector<std::string> Utils::parse_set_space(const std::string &x) {
     }
     std::stringstream sss (a);
 
+    // Remove spaces from substr
     while( sss.good() )
     {
         std::string substr;
@@ -112,23 +121,26 @@ std::vector<std::string> Utils::parse_set_space(const std::string &x) {
         parsed_set.emplace_back(substr);
     }
 
+    // Sort and erase any duplicates
     std::sort(parsed_set.begin(), parsed_set.end());
     parsed_set.erase( unique(parsed_set.begin(), parsed_set.end() ), parsed_set.end());
 
     return parsed_set;
 }
 
-void Utils::merge_duplicates(const std::string & x, std::vector<std::string> &to_merge,
+void Utils::merge_duplicates(const std::string & state_name, std::vector<std::string> &to_merge,
                              std::vector<std::vector<std::string>> &states) {
 
     for (std::vector<std::string> & i : states) {
 
+        // If vector is equal to given vector, skip
         if (i == to_merge) {
             continue;
         }
+        // Traverse vector of strings
         for (const std::string & j : i) {
-
-            if (j == x) {
+            // Merge given vector with found vector with same state name
+            if (j == state_name) {
                 i.insert(i.end(), to_merge.begin(), to_merge.end());
                 return;
             }
@@ -143,6 +155,7 @@ std::tuple<std::string, bool, bool> Utils::make_new_state(const std::vector<std:
     bool accepting = false;
     set.append("{");
 
+    // Traver all strings in parsed set
     for (const std::string & i : parsed_set) {
 
         if (!accepting && dfa->get_states().find(i)->second->get_accepting()) {
@@ -153,23 +166,23 @@ std::tuple<std::string, bool, bool> Utils::make_new_state(const std::vector<std:
             starting = true;
         }
 
+        // If last element from parsed_set --> append '}'
         if (i == *parsed_set.rbegin()) {
             set.append(dfa->get_states().find(i)->first + "}");
             break;
         }
-        // TODO
         set.append(dfa->get_states().find(i)->first + ", ");
     }
     return std::make_tuple(set, starting, accepting);
 }
 
-std::string Utils::exist_set(const std::map<const std::string, State *> &states, const std::string &state) {
+std::string Utils::exist_set(const std::map<const std::string, State *> &states, const std::string &set) {
 
     for (const std::pair<const std::string, State*> & i : states) {
 
         std::vector<std::string> parsed_set = Utils::parse_set_space(i.first);
 
-        if (std::find(parsed_set.begin(), parsed_set.end(), state) != parsed_set.end()) {
+        if (std::find(parsed_set.begin(), parsed_set.end(), set) != parsed_set.end()) {
             return i.first;
         }
     }
@@ -258,7 +271,7 @@ void Utils::mark_all(std::map<const std::string, Pair *> &pairs, DFA *dfa) {
             for (const std::string & j : dfa->get_alphabet()) {
 
                 const std::vector<std::pair<std::string, std::string>> & to_mark = Utils::get_states_to(*i, j, dfa);
-                // TODO
+
                 Utils::mark_pairs(to_mark, pairs);
             }
             i->setSearched(true);
@@ -271,6 +284,7 @@ void Utils::mark_pairs(const std::vector<std::pair<std::string, std::string>> &t
 
     for (const std::pair<std::string, std::string> & i : to_mark) {
 
+        // Switch positions of state names
         std::string pair_name = "{" + i.first + "," +  i.second + "}";
         std::string pair_name_reversed = "{" + i.second + "," +  i.first + "}";
 

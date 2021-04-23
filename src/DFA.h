@@ -17,32 +17,23 @@
 
 using json = nlohmann::json;
 
-//class Pair;
+/**
+ * \brief Forward declaration of Pair object
+ */
 class Pair;
 
+/**
+ * \brief Class implemented for DFA object
+ */
 class DFA {
 
 protected:
-
-    /**
-     * \brief Name of the DFA
-     */
-    std::string DFA_name;
-    /**
-     * \brief Alphabet of input-symbols used by the DFA
-     */
-    std::vector<std::string> alphabet;
-    /**
-     * \brief Map with the set of states {nameOfState, State*}
-     */
-    std::map<const std::string, State*> Q;
-    /**
-     * \brief Pointer to the starting state of the DFA
-     */
-    State* DFA_starting;
+    std::string DFA_name; ///< Name of DFA
+    std::vector<std::string> alphabet; ///< Alphabet of DFA in vector format
+    std::map<const std::string, State*> Q; ///< Map with pointers to State with name of state as key
+    State* DFA_starting; ///> Pointer to starting state of DFA
 
 public:
-
     /**
      * \brief Default constructor for DFA object
      */
@@ -123,8 +114,18 @@ public:
      */
     void set_state(const std::string & name, const bool starting, const bool accepting);
 
-    // Return bool if DFA contains given state name
+    /**
+     * \brief Checks if contains given state name
+     * @param state_name Name of state that is being searched
+     * @return True if exists
+     */
     bool contains_state(const std::string & state_name) const;
+
+    /**
+    * \brief Adds a state
+    * @param state Pointer to State
+    */
+    void add_state(State* state);
 
     /**
      * \brief Parse a .json file to a DFA object
@@ -137,26 +138,36 @@ public:
     */
     void generate_dot() const;
 
-    // Print states out
+    /**
+     * \brief Appends states to output string
+     * @param output_string String that will be used to make .json object by print method
+     */
     void print_states(std::string & output_string) const;
 
-    // Print transitions out
+    /**
+     * \brief Appends transitions to output string
+     * @param output_string String that will be used to make .json object method
+     */
     void print_transitions(std::string & output_string) const;
 
-    // Print DFA out in .json format
+    /**
+     * \brief Prints out DFA in .json format
+     */
     void print() const;
 
-    // Minimze DFA and return this
+    /**
+     * /brief Minimize a DFA with the Table-Filling-Algorithm
+     * @return DFA object
+     */
     DFA minimize();
 
-    // Print minimization table of DFA
+    /**
+     * \brief Prints out the table used by Table-Filling-Algorithm
+     * @return Pairs created by TFA
+     */
     const std::map<const std::string, Pair*> printTable();
 
-    void add_state(State* state);
-
     bool operator==(DFA rhs);
-
 };
-
 
 #endif //AUTOMATA_THEORY_DFA_H

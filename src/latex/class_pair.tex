@@ -1,0 +1,227 @@
+\hypertarget{class_pair}{}\doxysection{Pair Class Reference}
+\label{class_pair}\index{Pair@{Pair}}
+
+
+Class implemented for pairs of states that will be used inside the Table-\/\+Filling-\/\+Algorithm.  
+
+
+
+
+{\ttfamily \#include $<$Utils.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pair_a197b28187363a7f8e22cf693e9ef122a}\label{class_pair_a197b28187363a7f8e22cf693e9ef122a}} 
+{\bfseries Pair} (\mbox{\hyperlink{class_state}{State}} $\ast$state1, \mbox{\hyperlink{class_state}{State}} $\ast$state2)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_pair_a64ecf34aac8873cb276495276a5e1d51}{get\+Pair\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Get pair name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}} $\ast$ \mbox{\hyperlink{class_pair_a9f42e4a872fcf53b2386ed7cf53e6625}{get\+State1}} () const
+\begin{DoxyCompactList}\small\item\em Get pointer to state\+\_\+1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}} $\ast$ \mbox{\hyperlink{class_pair_a63537a7b84e5c7f3fe0daa30a4caf5f4}{get\+State2}} () const
+\begin{DoxyCompactList}\small\item\em Get pointer to state\+\_\+2. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_pair_a7bba32280da20fb4c7b315329697a484}{is\+Marked}} () const
+\begin{DoxyCompactList}\small\item\em Get marked. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_pair_ae1894549e8b1ab99179ce3b7966a566e}{is\+Searched}} () const
+\begin{DoxyCompactList}\small\item\em Get searched. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pair_a4f0d654210e69c730039cd411b4854c0}{set\+Pair\+Name}} (const std\+::string \&pair\+Name)
+\begin{DoxyCompactList}\small\item\em Set name of the pair of states. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pair_a6608457b8f7aeff6c990099bf337052f}{set\+State1}} (\mbox{\hyperlink{class_state}{State}} $\ast$state1)
+\begin{DoxyCompactList}\small\item\em Set pointer to state\+\_\+1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pair_a449f54f8f1b24ec3c0403dcb9e0d5139}{set\+State2}} (\mbox{\hyperlink{class_state}{State}} $\ast$state2)
+\begin{DoxyCompactList}\small\item\em Set pointer to state\+\_\+2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pair_a9213a361f080552234e75e759d6e17ac}{set\+Marked}} (bool x)
+\begin{DoxyCompactList}\small\item\em Set marked bool to x. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pair_ae4b3fd603935c0945d55ed47383ce351}{set\+Searched}} (bool x)
+\begin{DoxyCompactList}\small\item\em Set searched bool to x. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_pair_a745d534087b4755fafa718b4cffc20be}{mark\+\_\+to\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Returns \char`\"{}\+X\char`\"{} if pair is marked else \char`\"{}-\/\char`\"{}, used in the making of the TFA-\/table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \mbox{\hyperlink{class_pair_a2968b6b64237f628fb89658381e60eb1}{make\+\_\+pairs}} (const \mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$dfa)
+\begin{DoxyCompactList}\small\item\em Make pairs of given \mbox{\hyperlink{class_d_f_a}{DFA}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class implemented for pairs of states that will be used inside the Table-\/\+Filling-\/\+Algorithm. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pair_a64ecf34aac8873cb276495276a5e1d51}\label{class_pair_a64ecf34aac8873cb276495276a5e1d51}} 
+\index{Pair@{Pair}!getPairName@{getPairName}}
+\index{getPairName@{getPairName}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{getPairName()}{getPairName()}}
+{\footnotesize\ttfamily const std\+::string\& Pair\+::get\+Pair\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get pair name. 
+
+\begin{DoxyReturn}{Returns}
+pair\+\_\+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pair_a9f42e4a872fcf53b2386ed7cf53e6625}\label{class_pair_a9f42e4a872fcf53b2386ed7cf53e6625}} 
+\index{Pair@{Pair}!getState1@{getState1}}
+\index{getState1@{getState1}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{getState1()}{getState1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_state}{State}}$\ast$ Pair\+::get\+State1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get pointer to state\+\_\+1. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to \mbox{\hyperlink{class_state}{State}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pair_a63537a7b84e5c7f3fe0daa30a4caf5f4}\label{class_pair_a63537a7b84e5c7f3fe0daa30a4caf5f4}} 
+\index{Pair@{Pair}!getState2@{getState2}}
+\index{getState2@{getState2}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{getState2()}{getState2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_state}{State}}$\ast$ Pair\+::get\+State2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get pointer to state\+\_\+2. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to \mbox{\hyperlink{class_state}{State}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pair_a7bba32280da20fb4c7b315329697a484}\label{class_pair_a7bba32280da20fb4c7b315329697a484}} 
+\index{Pair@{Pair}!isMarked@{isMarked}}
+\index{isMarked@{isMarked}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{isMarked()}{isMarked()}}
+{\footnotesize\ttfamily bool Pair\+::is\+Marked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get marked. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pair_ae1894549e8b1ab99179ce3b7966a566e}\label{class_pair_ae1894549e8b1ab99179ce3b7966a566e}} 
+\index{Pair@{Pair}!isSearched@{isSearched}}
+\index{isSearched@{isSearched}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{isSearched()}{isSearched()}}
+{\footnotesize\ttfamily bool Pair\+::is\+Searched (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get searched. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pair_a2968b6b64237f628fb89658381e60eb1}\label{class_pair_a2968b6b64237f628fb89658381e60eb1}} 
+\index{Pair@{Pair}!make\_pairs@{make\_pairs}}
+\index{make\_pairs@{make\_pairs}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{make\_pairs()}{make\_pairs()}}
+{\footnotesize\ttfamily std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ Pair\+::make\+\_\+pairs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$}]{dfa }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Make pairs of given \mbox{\hyperlink{class_d_f_a}{DFA}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dfa} & Pointer to \mbox{\hyperlink{class_d_f_a}{DFA}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map consisting of pairs of states with as key the name of the pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pair_a745d534087b4755fafa718b4cffc20be}\label{class_pair_a745d534087b4755fafa718b4cffc20be}} 
+\index{Pair@{Pair}!mark\_to\_string@{mark\_to\_string}}
+\index{mark\_to\_string@{mark\_to\_string}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{mark\_to\_string()}{mark\_to\_string()}}
+{\footnotesize\ttfamily std\+::string Pair\+::mark\+\_\+to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns \char`\"{}\+X\char`\"{} if pair is marked else \char`\"{}-\/\char`\"{}, used in the making of the TFA-\/table. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pair_a9213a361f080552234e75e759d6e17ac}\label{class_pair_a9213a361f080552234e75e759d6e17ac}} 
+\index{Pair@{Pair}!setMarked@{setMarked}}
+\index{setMarked@{setMarked}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{setMarked()}{setMarked()}}
+{\footnotesize\ttfamily void Pair\+::set\+Marked (\begin{DoxyParamCaption}\item[{bool}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set marked bool to x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Bool \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pair_a4f0d654210e69c730039cd411b4854c0}\label{class_pair_a4f0d654210e69c730039cd411b4854c0}} 
+\index{Pair@{Pair}!setPairName@{setPairName}}
+\index{setPairName@{setPairName}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{setPairName()}{setPairName()}}
+{\footnotesize\ttfamily void Pair\+::set\+Pair\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pair\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set name of the pair of states. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pair\+Name} & New name of pair as string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pair_ae4b3fd603935c0945d55ed47383ce351}\label{class_pair_ae4b3fd603935c0945d55ed47383ce351}} 
+\index{Pair@{Pair}!setSearched@{setSearched}}
+\index{setSearched@{setSearched}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{setSearched()}{setSearched()}}
+{\footnotesize\ttfamily void Pair\+::set\+Searched (\begin{DoxyParamCaption}\item[{bool}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set searched bool to x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Bool \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pair_a6608457b8f7aeff6c990099bf337052f}\label{class_pair_a6608457b8f7aeff6c990099bf337052f}} 
+\index{Pair@{Pair}!setState1@{setState1}}
+\index{setState1@{setState1}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{setState1()}{setState1()}}
+{\footnotesize\ttfamily void Pair\+::set\+State1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}} $\ast$}]{state1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set pointer to state\+\_\+1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state1} & New pointer to a state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pair_a449f54f8f1b24ec3c0403dcb9e0d5139}\label{class_pair_a449f54f8f1b24ec3c0403dcb9e0d5139}} 
+\index{Pair@{Pair}!setState2@{setState2}}
+\index{setState2@{setState2}!Pair@{Pair}}
+\doxysubsubsection{\texorpdfstring{setState2()}{setState2()}}
+{\footnotesize\ttfamily void Pair\+::set\+State2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}} $\ast$}]{state2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set pointer to state\+\_\+2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state2} & New pointer to a state \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Utils.\+h\item 
+Utils.\+cpp\end{DoxyCompactItemize}

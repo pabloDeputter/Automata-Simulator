@@ -32,9 +32,8 @@ void NFA::ssc(State* state, DFA & dfa) {
     // Iterate trough alphabet
     for (const std::string & i : this->get_alphabet()) {
 
-        // Call revursive helper function
+        // Call recursive helper function
         NFA::recursive_ssc(state, dfa, i);
-
     }
 }
 
@@ -76,7 +75,7 @@ void NFA::recursive_ssc(State* state, DFA & dfa, const std::string & symbol) {
     if (dfa.contains_state(new_state_name)) {
         // If exists, add transition to new state
         state->add_transition(symbol, dfa.get_states().find(new_state_name)->second);
-        // Base case - recurision
+        // Base case - recursion
         return;
     }
 

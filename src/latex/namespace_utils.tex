@@ -1,0 +1,362 @@
+\hypertarget{namespace_utils}{}\doxysection{Utils Namespace Reference}
+\label{namespace_utils}\index{Utils@{Utils}}
+
+
+Methods used for the algorithms.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{namespace_utils_acabd5d15d1c38363e4668684990adeb8}{bool\+\_\+to\+\_\+string}} (bool x)
+\begin{DoxyCompactList}\small\item\em Converts bool to string. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_utils_ab92c3a346f599ff6a780fea76a3dc7ff}{parse\+\_\+set}} (const std\+::string \&x)
+\begin{DoxyCompactList}\small\item\em Parse set into a vector of string -\/ \{p\+\_\+1,p\+\_\+2,p\+\_\+3\} -\/-\/$>$ \mbox{[}p\+\_\+1, p\+\_\+2, p\+\_\+3\mbox{]}. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_utils_adcabc18dc019165483f4760ed0ccb9a8}{parse\+\_\+set\+\_\+space}} (const std\+::string \&x)
+\begin{DoxyCompactList}\small\item\em Parse set into a vector of string, but elements of set are spaced out with spaces -\/ \{p\+\_\+1, p\+\_\+2, p\+\_\+3\} -\/-\/$>$ \mbox{[}p\+\_\+1, p\+\_\+2, p\+\_\+3\mbox{]}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespace_utils_a58b9c27809dc16d01a31273c3177599b}{make\+\_\+set}} (const std\+::vector$<$ std\+::string $>$ \&x)
+\begin{DoxyCompactList}\small\item\em Make set out of vector of strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_utils_a406ded8cfaeb8e1751967b4824ac77fd}{make\+\_\+new\+\_\+states}} (std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&pairs, std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \&new\+\_\+states)
+\begin{DoxyCompactList}\small\item\em Make new states from the result of the TFA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_utils_a091998c9a37b5e1e4f091ea405842760}{replace\+\_\+states}} (\mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$old\+\_\+dfa, \mbox{\hyperlink{class_d_f_a}{DFA}} \&minimized\+\_\+dfa)
+\begin{DoxyCompactList}\small\item\em Replace states of old \mbox{\hyperlink{class_d_f_a}{DFA}} by newly created states from minimized \mbox{\hyperlink{class_d_f_a}{DFA}}, old \mbox{\hyperlink{class_d_f_a}{DFA}} is only used for recognizing the states. \end{DoxyCompactList}\item 
+std\+::vector$<$ const \mbox{\hyperlink{class_state}{State}} $\ast$ $>$ \mbox{\hyperlink{namespace_utils_a6870b41572144413b86ce3ac3b4bf78e}{state\+\_\+closure}} (const std\+::string \&set, const std\+::string \&symbol, \mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$dfa)
+\begin{DoxyCompactList}\small\item\em Get \char`\"{}closure\char`\"{} of a set, calculates all the transitions to states for a specific input-\/symbol for a set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_utils_a8b6311e76aebea6708a1026e4d3f21f7}{merge\+\_\+duplicates}} (const std\+::string \&state\+\_\+name, std\+::vector$<$ std\+::string $>$ \&to\+\_\+merge, std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \&states)
+\begin{DoxyCompactList}\small\item\em Merge / Delete states of given \mbox{\hyperlink{class_d_f_a}{DFA}}. \end{DoxyCompactList}\item 
+std\+::tuple$<$ std\+::string, bool, bool $>$ \mbox{\hyperlink{namespace_utils_ac51843a4d3fa4abfb951131cc4532161}{make\+\_\+new\+\_\+state}} (const std\+::vector$<$ std\+::string $>$ \&parsed\+\_\+set, const \mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$dfa)
+\begin{DoxyCompactList}\small\item\em Make a new set from a parsed set. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespace_utils_a64f005181c2e7dd842c21ee3826a6b93}{exist\+\_\+set}} (const std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_state}{State}} $\ast$ $>$ \&states, const std\+::string \&set)
+\begin{DoxyCompactList}\small\item\em Checks if a set already exists. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_utils_a46e7afd21ad2324eabfc7738d1d8dda9}{mark\+\_\+accepting}} (std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&pairs)
+\begin{DoxyCompactList}\small\item\em Marks all the pairs with at least 1 accepting state, distinguishable states. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \mbox{\hyperlink{namespace_utils_aa161e077bf3e4adbbd2bdf6baff2039d}{get\+\_\+marked}} (std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&pairs)
+\begin{DoxyCompactList}\small\item\em Get all the marked pairs. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \mbox{\hyperlink{namespace_utils_ae43845525c034497cc0789a7f89e853e}{get\+\_\+unmarked}} (std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&pairs)
+\begin{DoxyCompactList}\small\item\em Get all the unmarked pairs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_utils_adf82d5e1f9cfdeff74f3c1fddc850e53}{mark\+\_\+all}} (std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&pairs, \mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$dfa)
+\begin{DoxyCompactList}\small\item\em Executes the recursive step of the TFA until there are no more distinguishable pairs left to mark. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_utils_ad4b8a27843af57e691f3ae7ddd673ee7}{mark\+\_\+pairs}} (const std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::string $>$$>$ \&to\+\_\+mark, std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&pairs)
+\begin{DoxyCompactList}\small\item\em Marks all the given pairs. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$ \mbox{\hyperlink{namespace_utils_adc301e171b922efd0efb995488c151c9}{get\+\_\+states\+\_\+to}} (const \mbox{\hyperlink{class_pair}{Pair}} \&pair, const std\+::string \&symbol, \mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$dfa)
+\begin{DoxyCompactList}\small\item\em Get states that go to a pair of states on a specific input-\/symbol(=look in table and search for the names of the states of the given pair) \end{DoxyCompactList}\item 
+std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \mbox{\hyperlink{namespace_utils_a2d9a39a3b099abb7b3e270dbedd682fd}{minimize\+\_\+}} (\mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$dfa)
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Activation\char`\"{} method for the TFA \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Methods used for the algorithms. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_utils_acabd5d15d1c38363e4668684990adeb8}\label{namespace_utils_acabd5d15d1c38363e4668684990adeb8}} 
+\index{Utils@{Utils}!bool\_to\_string@{bool\_to\_string}}
+\index{bool\_to\_string@{bool\_to\_string}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{bool\_to\_string()}{bool\_to\_string()}}
+{\footnotesize\ttfamily std\+::string Utils\+::bool\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{bool}]{x }\end{DoxyParamCaption})}
+
+
+
+Converts bool to string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Input bool \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return bool as string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_utils_a64f005181c2e7dd842c21ee3826a6b93}\label{namespace_utils_a64f005181c2e7dd842c21ee3826a6b93}} 
+\index{Utils@{Utils}!exist\_set@{exist\_set}}
+\index{exist\_set@{exist\_set}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{exist\_set()}{exist\_set()}}
+{\footnotesize\ttfamily std\+::string Utils\+::exist\+\_\+set (\begin{DoxyParamCaption}\item[{const std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_state}{State}} $\ast$ $>$ \&}]{states,  }\item[{const std\+::string \&}]{set }\end{DoxyParamCaption})}
+
+
+
+Checks if a set already exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em states} & Map with the existing states and given names \\
+\hline
+{\em set} & Set containing the name of the states as string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the name of the state if it already exists, else \char`\"{}/\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_utils_aa161e077bf3e4adbbd2bdf6baff2039d}\label{namespace_utils_aa161e077bf3e4adbbd2bdf6baff2039d}} 
+\index{Utils@{Utils}!get\_marked@{get\_marked}}
+\index{get\_marked@{get\_marked}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{get\_marked()}{get\_marked()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ Utils\+::get\+\_\+marked (\begin{DoxyParamCaption}\item[{std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&}]{pairs }\end{DoxyParamCaption})}
+
+
+
+Get all the marked pairs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pairs} & Map with pairs of a \mbox{\hyperlink{class_d_f_a}{DFA}} used in TFA with the name of the pair as key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of pointers to marked pairs 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_utils_adc301e171b922efd0efb995488c151c9}\label{namespace_utils_adc301e171b922efd0efb995488c151c9}} 
+\index{Utils@{Utils}!get\_states\_to@{get\_states\_to}}
+\index{get\_states\_to@{get\_states\_to}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{get\_states\_to()}{get\_states\_to()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$ Utils\+::get\+\_\+states\+\_\+to (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pair}{Pair}} \&}]{pair,  }\item[{const std\+::string \&}]{symbol,  }\item[{\mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$}]{dfa }\end{DoxyParamCaption})}
+
+
+
+Get states that go to a pair of states on a specific input-\/symbol(=look in table and search for the names of the states of the given pair) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pair} & The pair which shall be searched for \\
+\hline
+{\em symbol} & The current input-\/symbol \\
+\hline
+{\em dfa} & Pointer to \mbox{\hyperlink{class_d_f_a}{DFA}} where the TFA is executed on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of pairs of strings containing the name of state\+\_\+1 and state\+\_\+2 of a pair 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_utils_ae43845525c034497cc0789a7f89e853e}\label{namespace_utils_ae43845525c034497cc0789a7f89e853e}} 
+\index{Utils@{Utils}!get\_unmarked@{get\_unmarked}}
+\index{get\_unmarked@{get\_unmarked}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{get\_unmarked()}{get\_unmarked()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ Utils\+::get\+\_\+unmarked (\begin{DoxyParamCaption}\item[{std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&}]{pairs }\end{DoxyParamCaption})}
+
+
+
+Get all the unmarked pairs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pairs} & Map with pairs of a \mbox{\hyperlink{class_d_f_a}{DFA}} used in the TFA with the name of the pair as key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of pointer to unmarked pairs 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_utils_ac51843a4d3fa4abfb951131cc4532161}\label{namespace_utils_ac51843a4d3fa4abfb951131cc4532161}} 
+\index{Utils@{Utils}!make\_new\_state@{make\_new\_state}}
+\index{make\_new\_state@{make\_new\_state}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{make\_new\_state()}{make\_new\_state()}}
+{\footnotesize\ttfamily std\+::tuple$<$ std\+::string, bool, bool $>$ Utils\+::make\+\_\+new\+\_\+state (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{parsed\+\_\+set,  }\item[{const \mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$}]{dfa }\end{DoxyParamCaption})}
+
+
+
+Make a new set from a parsed set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parsed\+\_\+set} & Vector of strings containing the name of states of set \\
+\hline
+{\em dfa} & The \mbox{\hyperlink{class_d_f_a}{DFA}} / \mbox{\hyperlink{class_n_f_a}{NFA}} with the original states inside the parsed\+\_\+set, used to check if these are accepting or starting \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a tuple with the name of the new state -\/ string, starting -\/ bool and accepting -\/ bool in respective order 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_utils_a406ded8cfaeb8e1751967b4824ac77fd}\label{namespace_utils_a406ded8cfaeb8e1751967b4824ac77fd}} 
+\index{Utils@{Utils}!make\_new\_states@{make\_new\_states}}
+\index{make\_new\_states@{make\_new\_states}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{make\_new\_states()}{make\_new\_states()}}
+{\footnotesize\ttfamily void Utils\+::make\+\_\+new\+\_\+states (\begin{DoxyParamCaption}\item[{std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&}]{pairs,  }\item[{std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \&}]{new\+\_\+states }\end{DoxyParamCaption})}
+
+
+
+Make new states from the result of the TFA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pairs} & Map with pairs of a \mbox{\hyperlink{class_d_f_a}{DFA}} used in TFA with the name of the pair as key, indistinguishable pairs are unmarked \\
+\hline
+{\em new\+\_\+states} & Most of the times a vector containing vector of strings referenced \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespace_utils_a58b9c27809dc16d01a31273c3177599b}\label{namespace_utils_a58b9c27809dc16d01a31273c3177599b}} 
+\index{Utils@{Utils}!make\_set@{make\_set}}
+\index{make\_set@{make\_set}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{make\_set()}{make\_set()}}
+{\footnotesize\ttfamily std\+::string Utils\+::make\+\_\+set (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Make set out of vector of strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of string containing the name of states \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Set containing name of states 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_utils_a46e7afd21ad2324eabfc7738d1d8dda9}\label{namespace_utils_a46e7afd21ad2324eabfc7738d1d8dda9}} 
+\index{Utils@{Utils}!mark\_accepting@{mark\_accepting}}
+\index{mark\_accepting@{mark\_accepting}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{mark\_accepting()}{mark\_accepting()}}
+{\footnotesize\ttfamily void Utils\+::mark\+\_\+accepting (\begin{DoxyParamCaption}\item[{std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&}]{pairs }\end{DoxyParamCaption})}
+
+
+
+Marks all the pairs with at least 1 accepting state, distinguishable states. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pairs} & Map with pairs of a \mbox{\hyperlink{class_d_f_a}{DFA}} used in TFA with the name of the pair as key \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespace_utils_adf82d5e1f9cfdeff74f3c1fddc850e53}\label{namespace_utils_adf82d5e1f9cfdeff74f3c1fddc850e53}} 
+\index{Utils@{Utils}!mark\_all@{mark\_all}}
+\index{mark\_all@{mark\_all}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{mark\_all()}{mark\_all()}}
+{\footnotesize\ttfamily void Utils\+::mark\+\_\+all (\begin{DoxyParamCaption}\item[{std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&}]{pairs,  }\item[{\mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$}]{dfa }\end{DoxyParamCaption})}
+
+
+
+Executes the recursive step of the TFA until there are no more distinguishable pairs left to mark. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pairs} & Map with pairs of a \mbox{\hyperlink{class_d_f_a}{DFA}} used in the TFA with the name of the pair as key \\
+\hline
+{\em dfa} & Pointer to \mbox{\hyperlink{class_d_f_a}{DFA}} where the TFA is executed on \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespace_utils_ad4b8a27843af57e691f3ae7ddd673ee7}\label{namespace_utils_ad4b8a27843af57e691f3ae7ddd673ee7}} 
+\index{Utils@{Utils}!mark\_pairs@{mark\_pairs}}
+\index{mark\_pairs@{mark\_pairs}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{mark\_pairs()}{mark\_pairs()}}
+{\footnotesize\ttfamily void Utils\+::mark\+\_\+pairs (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::string $>$$>$ \&}]{to\+\_\+mark,  }\item[{std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ \&}]{pairs }\end{DoxyParamCaption})}
+
+
+
+Marks all the given pairs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+\_\+mark} & Vector of pairs of strings containing the name of state\+\_\+1 and state\+\_\+2 of a pair \\
+\hline
+{\em pairs} & Map with pairs of a \mbox{\hyperlink{class_d_f_a}{DFA}} used in the TFA with the name of the pair as key \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespace_utils_a8b6311e76aebea6708a1026e4d3f21f7}\label{namespace_utils_a8b6311e76aebea6708a1026e4d3f21f7}} 
+\index{Utils@{Utils}!merge\_duplicates@{merge\_duplicates}}
+\index{merge\_duplicates@{merge\_duplicates}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{merge\_duplicates()}{merge\_duplicates()}}
+{\footnotesize\ttfamily void Utils\+::merge\+\_\+duplicates (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{state\+\_\+name,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{to\+\_\+merge,  }\item[{std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \&}]{states }\end{DoxyParamCaption})}
+
+
+
+Merge / Delete states of given \mbox{\hyperlink{class_d_f_a}{DFA}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+\_\+name} & Name of state to merge / delete \\
+\hline
+{\em to\+\_\+merge} & Vector of strings where the state\+\_\+name is located in, cannot be deleted \\
+\hline
+{\em states} & Vector of vector of strings containing all the state names \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespace_utils_a2d9a39a3b099abb7b3e270dbedd682fd}\label{namespace_utils_a2d9a39a3b099abb7b3e270dbedd682fd}} 
+\index{Utils@{Utils}!minimize\_@{minimize\_}}
+\index{minimize\_@{minimize\_}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{minimize\_()}{minimize\_()}}
+{\footnotesize\ttfamily std\+::map$<$ const std\+::string, \mbox{\hyperlink{class_pair}{Pair}} $\ast$ $>$ Utils\+::minimize\+\_\+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$}]{dfa }\end{DoxyParamCaption})}
+
+
+
+\char`\"{}\+Activation\char`\"{} method for the TFA 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dfa} & Pointer to \mbox{\hyperlink{class_d_f_a}{DFA}} where the TFA shall be executed on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map with pairs of a \mbox{\hyperlink{class_d_f_a}{DFA}} used in the TFA with the name of the pair as key 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_utils_ab92c3a346f599ff6a780fea76a3dc7ff}\label{namespace_utils_ab92c3a346f599ff6a780fea76a3dc7ff}} 
+\index{Utils@{Utils}!parse\_set@{parse\_set}}
+\index{parse\_set@{parse\_set}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{parse\_set()}{parse\_set()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Utils\+::parse\+\_\+set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Parse set into a vector of string -\/ \{p\+\_\+1,p\+\_\+2,p\+\_\+3\} -\/-\/$>$ \mbox{[}p\+\_\+1, p\+\_\+2, p\+\_\+3\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Set containing name of states \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of strings containing the name of states in set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_utils_adcabc18dc019165483f4760ed0ccb9a8}\label{namespace_utils_adcabc18dc019165483f4760ed0ccb9a8}} 
+\index{Utils@{Utils}!parse\_set\_space@{parse\_set\_space}}
+\index{parse\_set\_space@{parse\_set\_space}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{parse\_set\_space()}{parse\_set\_space()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Utils\+::parse\+\_\+set\+\_\+space (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Parse set into a vector of string, but elements of set are spaced out with spaces -\/ \{p\+\_\+1, p\+\_\+2, p\+\_\+3\} -\/-\/$>$ \mbox{[}p\+\_\+1, p\+\_\+2, p\+\_\+3\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Set containing name of states with spaces \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of strings containing the name of states in set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_utils_a091998c9a37b5e1e4f091ea405842760}\label{namespace_utils_a091998c9a37b5e1e4f091ea405842760}} 
+\index{Utils@{Utils}!replace\_states@{replace\_states}}
+\index{replace\_states@{replace\_states}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{replace\_states()}{replace\_states()}}
+{\footnotesize\ttfamily void Utils\+::replace\+\_\+states (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$}]{old\+\_\+dfa,  }\item[{\mbox{\hyperlink{class_d_f_a}{DFA}} \&}]{minimized\+\_\+dfa }\end{DoxyParamCaption})}
+
+
+
+Replace states of old \mbox{\hyperlink{class_d_f_a}{DFA}} by newly created states from minimized \mbox{\hyperlink{class_d_f_a}{DFA}}, old \mbox{\hyperlink{class_d_f_a}{DFA}} is only used for recognizing the states. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+\_\+dfa} & Pointer to \char`\"{}old\char`\"{} \mbox{\hyperlink{class_d_f_a}{DFA}} \\
+\hline
+{\em minimized\+\_\+dfa} & Reference to minimized \mbox{\hyperlink{class_d_f_a}{DFA}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespace_utils_a6870b41572144413b86ce3ac3b4bf78e}\label{namespace_utils_a6870b41572144413b86ce3ac3b4bf78e}} 
+\index{Utils@{Utils}!state\_closure@{state\_closure}}
+\index{state\_closure@{state\_closure}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{state\_closure()}{state\_closure()}}
+{\footnotesize\ttfamily std\+::vector$<$ const \mbox{\hyperlink{class_state}{State}} $\ast$ $>$ Utils\+::state\+\_\+closure (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{set,  }\item[{const std\+::string \&}]{symbol,  }\item[{\mbox{\hyperlink{class_d_f_a}{DFA}} $\ast$}]{dfa }\end{DoxyParamCaption})}
+
+
+
+Get \char`\"{}closure\char`\"{} of a set, calculates all the transitions to states for a specific input-\/symbol for a set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & Set containing the name of states \\
+\hline
+{\em symbol} & The input-\/symbol which the closure needs to be calculated for \\
+\hline
+{\em dfa} & The \mbox{\hyperlink{class_d_f_a}{DFA}} / \mbox{\hyperlink{class_n_f_a}{NFA}} with the original states inside the set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of states 
+\end{DoxyReturn}

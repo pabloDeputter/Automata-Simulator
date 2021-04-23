@@ -1,0 +1,108 @@
+\hypertarget{class_n_f_a}{}\doxysection{NFA Class Reference}
+\label{class_n_f_a}\index{NFA@{NFA}}
+
+
+Class implemented for \mbox{\hyperlink{class_n_f_a}{NFA}} that inherits of \mbox{\hyperlink{class_d_f_a}{DFA}}, because \mbox{\hyperlink{class_n_f_a}{NFA}} doesn\textquotesingle{}t needs to be working for implemented algorithms.  
+
+
+
+
+{\ttfamily \#include $<$NFA.\+h$>$}
+
+Inheritance diagram for NFA\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_n_f_a}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_f_a_a96399c59b33d4189005e3f50a8d69fc0}{NFA}} (const std\+::string \&x)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_n_f_a}{NFA}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_f_a}{DFA}} \mbox{\hyperlink{class_n_f_a_ae35c9cd6455975791f9a725e398e061f}{to\+DFA}} ()
+\begin{DoxyCompactList}\small\item\em Converts a \mbox{\hyperlink{class_n_f_a}{NFA}} object to a \mbox{\hyperlink{class_d_f_a}{DFA}} object following SSC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_n_f_a_a332a3a5bff2c2b7a2439303db7b80af2}{ssc}} (\mbox{\hyperlink{class_state}{State}} $\ast$state, \mbox{\hyperlink{class_d_f_a}{DFA}} \&dfa)
+\begin{DoxyCompactList}\small\item\em Iterate trough alphabet of given \mbox{\hyperlink{class_d_f_a}{DFA}} and calls recursive\+\_\+ssc for \char`\"{}recursive\char`\"{} step of SSC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_n_f_a_a49059a0a4938845f503cc0aec03d640a}{recursive\+\_\+ssc}} (\mbox{\hyperlink{class_state}{State}} $\ast$state, \mbox{\hyperlink{class_d_f_a}{DFA}} \&dfa, const std\+::string \&symbol)
+\begin{DoxyCompactList}\small\item\em Recursive helper-\/function for ssc method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class implemented for \mbox{\hyperlink{class_n_f_a}{NFA}} that inherits of \mbox{\hyperlink{class_d_f_a}{DFA}}, because \mbox{\hyperlink{class_n_f_a}{NFA}} doesn\textquotesingle{}t needs to be working for implemented algorithms. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_n_f_a_a96399c59b33d4189005e3f50a8d69fc0}\label{class_n_f_a_a96399c59b33d4189005e3f50a8d69fc0}} 
+\index{NFA@{NFA}!NFA@{NFA}}
+\index{NFA@{NFA}!NFA@{NFA}}
+\doxysubsubsection{\texorpdfstring{NFA()}{NFA()}}
+{\footnotesize\ttfamily NFA\+::\+NFA (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \mbox{\hyperlink{class_n_f_a}{NFA}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Path to .json file with \mbox{\hyperlink{class_n_f_a}{NFA}} data as string \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_f_a_a49059a0a4938845f503cc0aec03d640a}\label{class_n_f_a_a49059a0a4938845f503cc0aec03d640a}} 
+\index{NFA@{NFA}!recursive\_ssc@{recursive\_ssc}}
+\index{recursive\_ssc@{recursive\_ssc}!NFA@{NFA}}
+\doxysubsubsection{\texorpdfstring{recursive\_ssc()}{recursive\_ssc()}}
+{\footnotesize\ttfamily void NFA\+::recursive\+\_\+ssc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}} $\ast$}]{state,  }\item[{\mbox{\hyperlink{class_d_f_a}{DFA}} \&}]{dfa,  }\item[{const std\+::string \&}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Recursive helper-\/function for ssc method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to current state of newly created \mbox{\hyperlink{class_d_f_a}{DFA}} \\
+\hline
+{\em dfa} & Pointer to new \mbox{\hyperlink{class_d_f_a}{DFA}} that will be created trough SSC \\
+\hline
+{\em symbol} & Current input-\/symbol \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_n_f_a_a332a3a5bff2c2b7a2439303db7b80af2}\label{class_n_f_a_a332a3a5bff2c2b7a2439303db7b80af2}} 
+\index{NFA@{NFA}!ssc@{ssc}}
+\index{ssc@{ssc}!NFA@{NFA}}
+\doxysubsubsection{\texorpdfstring{ssc()}{ssc()}}
+{\footnotesize\ttfamily void NFA\+::ssc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}} $\ast$}]{state,  }\item[{\mbox{\hyperlink{class_d_f_a}{DFA}} \&}]{dfa }\end{DoxyParamCaption})}
+
+
+
+Iterate trough alphabet of given \mbox{\hyperlink{class_d_f_a}{DFA}} and calls recursive\+\_\+ssc for \char`\"{}recursive\char`\"{} step of SSC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to start state of \mbox{\hyperlink{class_d_f_a}{DFA}} \\
+\hline
+{\em dfa} & New \mbox{\hyperlink{class_d_f_a}{DFA}} that will be created trough SSC \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_n_f_a_ae35c9cd6455975791f9a725e398e061f}\label{class_n_f_a_ae35c9cd6455975791f9a725e398e061f}} 
+\index{NFA@{NFA}!toDFA@{toDFA}}
+\index{toDFA@{toDFA}!NFA@{NFA}}
+\doxysubsubsection{\texorpdfstring{toDFA()}{toDFA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_f_a}{DFA}} NFA\+::to\+DFA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converts a \mbox{\hyperlink{class_n_f_a}{NFA}} object to a \mbox{\hyperlink{class_d_f_a}{DFA}} object following SSC. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_d_f_a}{DFA}} object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+NFA.\+h\item 
+NFA.\+cpp\end{DoxyCompactItemize}
