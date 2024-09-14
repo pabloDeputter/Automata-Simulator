@@ -28,6 +28,9 @@ void DFA::parse_json(const std::string & file) {
 
     // Traverse all transitions of DFA and add these to the states
     for (const auto & i : j["transitions"]) {
+
+
+
         Q.find(i["from"])->second->add_transition(i["input"], Q.find(i["to"])->second);
     }
 }
