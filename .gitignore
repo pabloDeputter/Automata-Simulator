@@ -30,13 +30,3 @@
 *.exe
 *.out
 *.app
-
-# Build folder and releases
-/cmake-build-debug/
-/cmake-build-default/
-
-# .idea
-.idea/
-
-# CMake
-CMakeFiles/
