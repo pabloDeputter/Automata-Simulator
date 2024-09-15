@@ -4,6 +4,8 @@
 
 This project implements both a **Deterministic Finite Automaton (DFA)** and a **Non-deterministic Finite Automaton (NFA)** simulator, written in C++. It allows users to define DFAs and NFAs using JSON format and visualize them using `.dot` files for further processing and visualization through tools like [Graphviz](https://graphviz.org/).
 
+**Built for the "Languages & Automata" 1st bachelor course at the University of Antwerp.**
+
 ## Features
 
 - Define and simulate both DFAs and NFAs using JSON input.
